@@ -1,0 +1,37 @@
+backend = CPU
+backend_precision = double
+
+max_backbone_force = 5
+max_backbone_force_far = 10
+
+# model and salt concentration (in molar)
+interaction_type = DNA2
+salt_concentration = 1
+
+ensemble = NVT
+
+# the next 4 options can be changed to improve performance
+delta_translation = 0.22
+delta_rotation = 0.22
+verlet_skin = 1.0
+cells_auto_optimisation = true
+
+sim_type = MC
+steps = 1e3
+
+T = 10C
+
+refresh_vel = true
+
+# topology and initial configuration files
+conf_file = [configuration_file_name]
+topology = [topology_file_name]
+
+# some output options
+lastconf_file = last_conf_MC.dat
+trajectory_file = trajectory_MC.dat
+energy_file = energy_MC.dat
+restart_step_counter = true
+print_energy_every = 100
+print_conf_interval = 1e5
+time_scale = linear
